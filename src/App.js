@@ -9,6 +9,7 @@ import PrivatePage from "./components/PrivatePage";
 import Transcribe from "./components/Transcribe";
 import WritenTextPage from "./components/WritenTextPage";
 import Recorder from "./components/Recorder";
+import Display from "./components/Display";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/recordsPage" element={<RecordsPage />} />
         <Route path="/write" element={<WritenTextPage />} />
         <Route path="/record" element={<Recorder />} />
+        <Route path="/display" element={<Display />} />
        
         <Route
           path="/profile"

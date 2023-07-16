@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from 'axios';
 import { AudioRecorder, useAudioRecorder } from 'react-audio-voice-recorder';
 
@@ -7,10 +6,9 @@ function Recorder() {
 
     const uploadAudioFile = async (blob) => {
       try {
-          const gotToken = localStorage.getItem("authToken");
-          const formData = new FormData();
+        const gotToken = localStorage.getItem("authToken");
+        const formData = new FormData();
         
-        // edit this !!! 
         formData.append('audio', blob, 'recorded.wav');
         await axios.post('http://localhost:5005/auth/record',
           formData,
