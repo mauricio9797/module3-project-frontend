@@ -6,10 +6,14 @@ import { Link } from "react-router-dom";
 function Transcribe() {
   const [transcription, setTranscription] = useState("");
   const [fetching, setFetching] = useState(true);
+  const gotToken = localStorage.getItem("authToken");
 
   useEffect(() => {                               
     axios
-      .get("http://localhost:5005/auth/transcribe")
+      .get("http://localhost:5005/auth/transcribe" ,
+      {
+        headers: { authorization: `Bearer ${gotToken}` },
+      } )
       .then((response) => {
         console.log(response.data);
         const { text } = response.data;
