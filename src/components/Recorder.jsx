@@ -5,22 +5,22 @@ import { AudioRecorder, useAudioRecorder } from 'react-audio-voice-recorder';
 function Recorder() {
     const recorderControls = useAudioRecorder();
 
-  const uploadAudioFile = async (blob) => {
-    try {
-        const gotToken = localStorage.getItem("authToken");
-        const formData = new FormData();
-      
-      // edit this !!! 
-      formData.append('audio', blob, 'recorded.wav');
-      await axios.post('http://localhost:5005/auth/record',
-        formData,
-        {
-          headers: { authorization: `Bearer ${gotToken}` },
-        })
-      console.log('File uploaded successfully');
-    } catch (error) {
-      console.error('Error uploading file:', error);
-    }
+    const uploadAudioFile = async (blob) => {
+      try {
+          const gotToken = localStorage.getItem("authToken");
+          const formData = new FormData();
+        
+        // edit this !!! 
+        formData.append('audio', blob, 'recorded.wav');
+        await axios.post('http://localhost:5005/auth/record',
+          formData,
+          {
+            headers: { authorization: `Bearer ${gotToken}` },
+          })
+        console.log('File uploaded successfully');
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
   };
 
   const addAudioElement = (blob) => {
