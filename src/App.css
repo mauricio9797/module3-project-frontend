@@ -5,13 +5,25 @@
 #242b32 black-ish */
 
 
-.App{
-  /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-
-  font-family: 'Space Grotesk';
-        font-size: 12px;
+.App{  
 }
 
+body{
+  margin: 20px;
+  min-height: 500px;
+  font-family: 'Space Grotesk';
+  font-size: 12px;
+  background-color: #e6639d;
+}
+
+main{
+  border-radius: 20px;
+  background-color: #f9f1c3;
+  height: 600px;
+  padding: 0 50px;
+}
+
+/* Styling nav bar */
 nav{
   background-color: #f9f1c3;
   height: 50px;
@@ -20,13 +32,15 @@ nav{
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+  margin: 20px;
+  border-radius: 20px;
 }
 
 .app-title{
   color: black;
   font-size: 16px;
   font-weight: bolder;
-  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links{
@@ -37,7 +51,7 @@ nav{
 }
 
 .nav-link{
-  padding: 20px;
+  /* padding: 20px; */
   text-decoration: none;
   color: #242b32;
   
@@ -49,7 +63,7 @@ nav{
  display: inline-block;
  position: relative;
  color: #e6639d;
- padding: 0 10px;
+ /* padding: 0 10px; */
  text-decoration: none;
  color: #242b32;
  font-weight: bold;
