@@ -10,12 +10,13 @@ import Transcribe from "./components/Transcribe";
 import WritenTextPage from "./components/WritenTextPage";
 import Recorder from "./components/Recorder";
 import Display from "./components/Display";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Signup />} />
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
