@@ -1,7 +1,10 @@
 function Layout({ children }) {
     return (
       <div>
-        <nav>
+        
+          <body>
+            <main>
+            <nav>
             <div className="app-title"> Too Lazy to Type</div>
             <ul className="nav-links" >
               <li><a className="nav-link" href="/login">Login</a></li>
@@ -10,8 +13,6 @@ function Layout({ children }) {
               <li><a className="nav-link" href="/">Contact us</a></li>
             </ul>
             </nav>
-          <body>
-            <main>
               {children}
             </main>
           </body>    

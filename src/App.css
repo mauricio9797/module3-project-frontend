@@ -2,7 +2,8 @@
 #34c3fa blue 
 #f9f1c3 yellow 
 #e6639d pink 
-#242b32 black-ish */
+#242b32 black-ish 
+#fcfaf9 white*/
 
 
 .App{  
@@ -18,14 +19,14 @@ body{
 
 main{
   border-radius: 20px;
-  background-color: #f9f1c3;
+  background-color: #fcfaf9;
   height: 600px;
   padding: 0 50px;
 }
 
 /* Styling nav bar */
 nav{
-  background-color: #f9f1c3;
+  background-color: #fcfaf9;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -33,14 +34,16 @@ nav{
   justify-content: space-between;
   padding: 0 50px;
   margin: 20px;
-  border-radius: 20px;
+  border-bottom: #242b32 2px solid;
+  /* border-radius: 20px; */
+
 }
 
 .app-title{
   color: black;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bolder;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .nav-links{
@@ -68,7 +71,7 @@ nav{
  position: absolute;
  width: 100%;
  transform: scaleX(0);
- height: 2px;
+ height: 4px;
  bottom: 0;
  left: 0;
  background-color: #e6639d;
