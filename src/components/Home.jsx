@@ -1,11 +1,12 @@
-import Navbar from "./Navbar"
+import Layout from "./Layout"
 
 function Home() {
   
   return (
     <div>
-    <Navbar />
+    <Layout>
      <p> Home</p>
+     </Layout>
 
      
     </div>
