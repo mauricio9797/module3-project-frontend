@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Layout from "./Layout";
+
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,6 +30,7 @@ function Signup() {
   };
 
   return (
+    <Layout>
     <div className="LoginPage">
       <h1>Signup</h1>
 
@@ -50,6 +53,7 @@ function Signup() {
       <p>Already have an account?</p>
       <Link to={"/login"}>Login</Link>
     </div>
+    </Layout>
   );
 }
 

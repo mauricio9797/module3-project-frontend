@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { AudioRecorder, useAudioRecorder } from 'react-audio-voice-recorder';
+import Layout from "./Layout";
 
 function Recorder() {
     const recorderControls = useAudioRecorder();
@@ -34,6 +35,7 @@ function Recorder() {
 
 
   return (
+    <Layout>
     <div>
       <div>
       <AudioRecorder 
@@ -43,6 +45,7 @@ function Recorder() {
       {/* <button onClick={recorderControls.stopRecording}>Stop recording</button> */}
     </div>
     </div>
+    </Layout>
   )
 }
 

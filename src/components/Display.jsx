@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Layout from "./Layout";
 
 function Display() {
   const gotToken = localStorage.getItem("authToken");
@@ -21,6 +22,7 @@ function Display() {
   }, [] );
   
   return (
+    <Layout>
     <div>
        View all saved records:
 
@@ -28,6 +30,7 @@ function Display() {
        Transcript:
        { fetching ? <p>Loading ...</p> : <p> { displayedText } </p>}
     </div>
+    </Layout>
   )
 }
 

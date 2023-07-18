@@ -18,13 +18,15 @@ nav{
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
 }
 
 .app-title{
   color: black;
   font-size: 16px;
   font-weight: bolder;
-  margin-left: 20px;
+  
 }
 
 .nav-links{
@@ -35,5 +37,39 @@ nav{
 }
 
 .nav-link{
-  margin-left: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: #242b32;
+  
+}
+
+/* Hover animation for nav bar links */
+
+.nav-link {
+ display: inline-block;
+ position: relative;
+ color: #e6639d;
+ padding: 0 10px;
+ text-decoration: none;
+ color: #242b32;
+ font-weight: bold;
+
+}
+
+.nav-link:after {
+ content: '';
+ position: absolute;
+ width: 100%;
+ transform: scaleX(0);
+ height: 2px;
+ bottom: 0;
+ left: 0;
+ background-color: #e6639d;
+ transform-origin: bottom right;
+ transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover:after {
+ transform: scaleX(1);
+ transform-origin: bottom left;
 }

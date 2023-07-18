@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Layout from "./Layout";
 
 function WritenTextPage() {
     const gotToken = localStorage.getItem("authToken");
@@ -21,12 +22,14 @@ function WritenTextPage() {
     }, [] );
 
     return (
-    <div>
-        Written text:
-        {fetching ? <p>Loading ...</p> : <p>{writtenText}</p>}
-       
+        <Layout>
+            <div>
+                Written text:
+                {fetching ? <p>Loading ...</p> : <p>{writtenText}</p>}
+            
 
-    </div>
+            </div>
+    </Layout>
     )
     }
 
