@@ -16,38 +16,36 @@ function EditUser() {
 
   useEffect(() => {
     try {
-      
       const gotToken = localStorage.getItem("authToken");
-      if (gotToken) {
-        axios
-          .get(`https://localhost:5005/auth/editUser/${userId}`,{
+
+     axios
+          .get(`http://localhost:5005/auth/editUser/${userId}`,{
             headers: { authorization: `Bearer ${gotToken}` },
           })
           .then((response) => {
-            setEmail(response.data.email);
+            console.log("response.data from frontend", response.data);
+            const { email } = response.data;
+            console.log(email);
+            setEmail(response.email);
           })
-          .catch((error) => {
-            console.log(error);
-            setErrorMessage("Failed to fetch user data. Please try again.");
-          });
-      }
     } catch (error) {
       console.log(error);
       setErrorMessage("Failed to fetch user data. Please try again.");
     }
-  }, [userId]);
+     
+  }, []);
 
-  const handleEmail = (e) => setEmail(e.target.value);
+//   const handleEmail = (e) => setEmail(e.target.value);
 
-  const handleEditUser = (e) => {
-    e.preventDefault();
+//   const handleEditUser = (e) => {
+//     e.preventDefault();
 
-axios
-.put
-(`http://localhost:5005/auth/editUser/${userId}`, {email})
-.then((response) => {
-  console.log(response.data)
-})
+// axios
+// .put
+// (`http://localhost:5005/auth/editUser/${userId}`, {email})
+// .then((response) => {
+//   console.log(response.data)
+// })
 /*const userToEdit = {email}
 
 console.log(userToEdit, "usertoedit")
@@ -75,7 +73,7 @@ console.log(userToEdit, "usertoedit")
     <div className="EditUserPage">
       <h1>Edit User</h1>
 
-      <form onSubmit={handleEditUser} encType="multipart/form-data">
+      {/* <form onSubmit={handleEditUser} encType="multipart/form-data">
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
@@ -87,9 +85,10 @@ console.log(userToEdit, "usertoedit")
 
       <Link to={"/profile"}>
         <button>Back to Profile</button>
-      </Link>
+      </Link> */}
     </div>
   );
-}}
+//}
+}
 
 export default EditUser
