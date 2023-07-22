@@ -33,27 +33,19 @@ function EditUser() {
       setErrorMessage("Failed to fetch user data. Please try again.");
     }
      
-  }, []);
+  }, [userId]);
 
-//   const handleEmail = (e) => setEmail(e.target.value);
+   
 
-//   const handleEditUser = (e) => {
-//     e.preventDefault();
-
-// axios
-// .put
-// (`http://localhost:5005/auth/editUser/${userId}`, {email})
-// .then((response) => {
-//   console.log(response.data)
-// })
-/*const userToEdit = {email}
-
-console.log(userToEdit, "usertoedit")
+   const handleEditUser = (e) => {
+     e.preventDefault();
+   
+    const userToEdit = { email };
 
     try {
       const gotToken = localStorage.getItem("authToken");
       axios
-        .post(`http://localhost:5005/auth/editUser/${userId}`, userToEdit, {
+        .put(`http://localhost:5005/auth/editUser/${userId}`, userToEdit, {
           headers: { authorization: `Bearer ${gotToken}` },
         })
         .then(() => {
@@ -67,15 +59,15 @@ console.log(userToEdit, "usertoedit")
       console.log(error);
       setErrorMessage("There was an error editing the user. Please try again.");
     }
-  };*/
+  };
 
   return (
     <div className="EditUserPage">
       <h1>Edit User</h1>
 
-      {/* <form onSubmit={handleEditUser} encType="multipart/form-data">
+      <form onSubmit={handleEditUser} encType="multipart/form-data">
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
         
 
@@ -85,7 +77,7 @@ console.log(userToEdit, "usertoedit")
 
       <Link to={"/profile"}>
         <button>Back to Profile</button>
-      </Link> */}
+      </Link> 
     </div>
   );
 //}
