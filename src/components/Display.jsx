@@ -14,9 +14,15 @@ function Display() {
   const [displayedRecord, setDisplayedRecord] = useState([]);
   const [fetching, setFetching] = useState(true);
   const [toggle, setToggle] = useState(false);
+  const [count, setCount] = useState(0);
+ 
 
+  
   const navigate = useNavigate();
-
+  const handleLikeButton =  () => {
+    setToggle((current) => !current);
+    setCount((prevCount) => prevCount + 1);
+    }
   useEffect(() => {
     axios
       .get(`${API_URL}/auth/display`, {
@@ -24,7 +30,7 @@ function Display() {
       })
       .then((res) => {
         setDisplayedRecord(res.data);
-        console.log(res.data)
+        console.log("data",res.data)
         setFetching(false);
       })
       .catch((error) => console.log(error));
@@ -51,6 +57,7 @@ function Display() {
         console.log("There was an error while deleting the transcript", err);
       }
     }
+    
   };
 
   return (
@@ -72,9 +79,21 @@ function Display() {
                   <p>This is a written text:  {item.text} </p>
                   {console.log("item id", item._id)}
                   <button className="red-button" onClick={() => handleDeleteTranscription(entry._id)}> Delete </button> 
+                  <div>
+    <button style={{backgroundColor: 'rgb(128, 255, 0)'}}
+    
+    onClick={ handleLikeButton}>
+     
+    
+  
+    <p>Likes {count}</p>
+    Like button
+  </button>
+  </div>
 
                 
                   </div>
+                  
                 ))}
               </div>
             ))}
