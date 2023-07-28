@@ -17,7 +17,7 @@ function Recorder() {
 
       formData.append("audio", blob, "recorded.wav");
       const response = await axios.post(
-        "http://localhost:5005/auth/record",
+        `${API_URL}/auth/record`,
         formData,
         {
           headers: { authorization: `Bearer ${gotToken}` },
